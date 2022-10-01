@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return \App\Models\User::latest()->paginate(10);
-});
+Route::get('/', [\App\Http\Controllers\PostController::class, 'index']);
+Route::get('/mutate', [\App\Http\Controllers\PostController::class, 'mutate']);

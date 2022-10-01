@@ -41,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function latestPagination(int $int)
+    {
+        return static::whereNotNull('1=1')->paginate($int);
+    }
 }
